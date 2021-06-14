@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://List.gd" type="Script" id=1]
+[ext_resource path="res://TodoItem.tscn" type="PackedScene" id=2]
+
+[node name="List" type="VBoxContainer"]
+margin_right = 998.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TodoItem" parent="." instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_right = 998.0
+margin_bottom = 24.0

@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://TodoTree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TodoCtrl.tscn" type="PackedScene" id=3]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 13
+custom_constants/margin_top = 13
+custom_constants/margin_left = 13
+custom_constants/margin_bottom = 13
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 13.0
+margin_top = 13.0
+margin_right = 1011.0
+margin_bottom = 587.0
+
+[node name="TodoTree" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
+
+[node name="TodoCtrl" parent="MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
+items = [ "Action", null, false, 0, null, "Add Sibling", null, false, 1, null, "Add Child", null, false, 2, null, "Refresh", null, false, 7, null ]
+
+[connection signal="refresh" from="MarginContainer/VBoxContainer/TodoCtrl" to="." method="_on_TodoCtrl_refresh"]

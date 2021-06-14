@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://TodoCtrl.gd" type="Script" id=1]
+
+[node name="TodoCtrl" type="OptionButton"]
+margin_left = 464.0
+margin_top = 554.0
+margin_right = 534.0
+margin_bottom = 574.0
+size_flags_horizontal = 4
+text = "Action"
+items = [ "Action", null, false, 0, null, "Add Sibling", null, false, 1, null, "Add Child", null, false, 2, null, "Refresh", null, false, 7, null ]
+selected = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="item_selected" from="." to="." method="_on_TodoCtrl_item_selected"]
